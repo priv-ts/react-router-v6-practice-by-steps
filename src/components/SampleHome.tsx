@@ -35,6 +35,9 @@ const SampleHome: React.VFC = () => {
           <li>
             <Link to="page3_hi">Sample Page 3 Hi</Link>
           </li>
+          <li>
+            <Link to="page4">Sample Page 4</Link>
+          </li>
         </ul>
       </nav>
 
