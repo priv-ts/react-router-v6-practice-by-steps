@@ -1,7 +1,18 @@
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 const SamplePage2: React.VFC = () => {
-  return <h3>Sample Page 2</h3>;
+  const [searchParams] = useSearchParams();
+
+  const query1 = searchParams.get("query1");
+  const query2 = searchParams.get("query2");
+
+  return (
+    <>
+      <p>query1={query1}</p>
+      <p>query2={query2}</p>
+    </>
+  );
 };
 
 export default SamplePage2;
