@@ -26,6 +26,12 @@ const SampleHome: React.VFC = () => {
           <li>
             <Link to={`page2?${params}`}>Sample Page 2 With Query2</Link>
           </li>
+          <li>
+            <Link to="page3_hello">Sample Page 3 Hello</Link>
+          </li>
+          <li>
+            <Link to="page3_hi">Sample Page 3 Hi</Link>
+          </li>
         </ul>
       </nav>
     </>
