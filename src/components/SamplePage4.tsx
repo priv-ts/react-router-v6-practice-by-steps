@@ -1,13 +1,27 @@
 import React from "react";
 import {
   Outlet,
-  Link,
   useParams,
   useNavigate,
   NavigateFunction,
+  NavLink,
 } from "react-router-dom";
 
 export const SamplePage4: React.VFC = () => {
+  const active = {
+    fontWeight: "bold",
+    color: "#d57276",
+  };
+
+  const inActive = {
+    fontWeight: "normal",
+    color: "#65b2c6",
+  };
+
+  const linkStyle = (isActive: boolean) => {
+    return isActive ? active : inActive;
+  };
+
   const navigate: NavigateFunction = useNavigate();
 
   return (
@@ -15,13 +29,19 @@ export const SamplePage4: React.VFC = () => {
       <h3>Sample Page 4</h3>
       <ul>
         <li>
-          <Link to="child1">Show Child 1</Link>
+          <NavLink to="child1" style={({ isActive }) => linkStyle(isActive)}>
+            Show Child 1
+          </NavLink>
         </li>
         <li>
-          <Link to="child2">Show Child 2</Link>
+          <NavLink to="child2" style={({ isActive }) => linkStyle(isActive)}>
+            Show Child 2
+          </NavLink>
         </li>
         <li>
-          <Link to="123">Show Child 3</Link>
+          <NavLink to="123" style={({ isActive }) => linkStyle(isActive)}>
+            Show Child 3
+          </NavLink>
         </li>
       </ul>
       <Outlet />
