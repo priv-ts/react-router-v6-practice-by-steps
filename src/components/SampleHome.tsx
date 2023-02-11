@@ -1,7 +1,10 @@
 import React from "react";
 import { createSearchParams, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SampleHome: React.VFC = () => {
+  const navigate = useNavigate();
+
   const params: string = createSearchParams({
     query1: "createQueryValue1",
     query2: "createQueryValue2",
@@ -34,6 +37,8 @@ const SampleHome: React.VFC = () => {
           </li>
         </ul>
       </nav>
+
+      <button onClick={() => navigate("page1")}>Sample Page 1</button>
     </>
   );
 };
